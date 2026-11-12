@@ -47,7 +47,7 @@ npm run cv:build    # Regenerate both downloadable CV PDFs
 - `src/data/cv.json`: source content for the English and Spanish web CVs/PDFs.
 - `src/components/`: reusable page layouts and shared presentation.
 - `src/styles/global.css`: responsive visual system and print styles.
-- `public/images/arnold-avatar.jpg`: copy of the public GitHub profile portrait used in the hero.
+- `public/images/arnold-portrait.jpg`: original portrait supplied by Arnold, used with its natural white background and a straight crop.
 - `docs/incidentops-platform-project.md`: separate full-stack project recommendation for the next portfolio project.
 
 Keep learning status accurate. Python and Docker are completed; Linux and networking are in progress; CI/CD, Terraform and monitoring are planned. AWS is described only as introductory guided learning, not commercial experience or a certification.
@@ -65,4 +65,4 @@ The deployment target is the GitHub user Pages repository **`suarch-dev.github.i
 - The AWS entry is intentionally labelled introductory.
 - The alert bot is described as on-demand, not as a continuously running monitoring service.
 - The one-year break in the Grupo Amazing date range is reflected in the user's supplied **5.8 years cumulative experience** figure.
-- The image-generation service had no remaining credits, so the site uses Arnold's existing public GitHub portrait instead of inventing a new likeness.
+- The hero uses Arnold's original supplied portrait; the photo is not AI-generated or background-removed.

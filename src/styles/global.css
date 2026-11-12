@@ -139,7 +139,6 @@ h4 {
   width: min(100%, 1600px);
   margin-inline: auto;
   padding-inline: var(--page-gutter);
-  overflow-x: clip;
 }
 
 .section-wrap {
@@ -296,7 +295,6 @@ h4 {
 .micro-label,
 .project-category,
 .route-status,
-.portrait-caption-label,
 .proof-label,
 .experience-date,
 .experience-place,
@@ -483,6 +481,7 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   padding: 0;
 }
 
@@ -511,29 +510,28 @@ h4 {
 .portrait-card {
   position: relative;
   z-index: 1;
-  width: min(78%, 22rem);
+  width: min(80%, 22rem);
   margin: 0;
-  padding: 0.55rem;
-  border: 1px solid rgba(255, 215, 181, 0.36);
-  border-radius: 1rem;
-  background: #211710;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.37), 0 0 4rem rgba(255, 124, 65, 0.14);
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .portrait-photo-wrap {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 0.82;
-  border-radius: 0.6rem;
-  background: linear-gradient(150deg, #f5b17d, #8c492e 58%, #2a1912);
+  aspect-ratio: 0.86;
+  border: 1px solid rgba(255, 245, 233, 0.2);
+  border-radius: 0.65rem;
+  background: #f7f5f1;
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.28);
 }
 
 .portrait-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 24%;
-  filter: saturate(0.94) contrast(1.01);
+  object-position: center 18%;
 }
 
 .portrait-initials {
@@ -550,25 +548,6 @@ h4 {
 .portrait-photo[src=''] + .portrait-initials,
 .portrait-photo:not([src]) + .portrait-initials {
   display: block;
-}
-
-.portrait-card figcaption {
-  display: flex;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding: 0.8rem 0.45rem 0.2rem;
-}
-
-.portrait-caption-label {
-  color: var(--orange-bright);
-  font-size: 0.52rem;
-}
-
-.portrait-caption-name {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.49rem;
-  letter-spacing: 0.05em;
 }
 
 .signal-drawing {
@@ -2158,7 +2137,7 @@ h4 {
   }
 
   .portrait-card {
-    width: min(74%, 18rem);
+    width: min(76%, 19rem);
   }
 
   .strength-grid {
@@ -2242,7 +2221,7 @@ h4 {
   }
 
   .portrait-card {
-    width: min(66%, 18rem);
+    width: min(70%, 18rem);
   }
 
   .section-heading-split {
@@ -2343,7 +2322,7 @@ h4 {
   }
 
   .portrait-card {
-    width: min(70%, 16rem);
+    width: min(72%, 16.5rem);
   }
 
   .section {
@@ -2741,11 +2720,6 @@ h4 {
 
 .proof-label {
   font-size: 0.84rem;
-}
-
-.portrait-caption-label,
-.portrait-caption-name {
-  font-size: 0.8rem;
 }
 
 .focus-note span {

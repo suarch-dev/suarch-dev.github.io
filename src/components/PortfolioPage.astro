@@ -93,13 +93,13 @@ const progressLabels = {
           </div>
         </div>
 
-        <div class="hero-visual" aria-label={t.hero.portraitCaption}>
+        <div class="hero-visual" aria-label={locale === 'en' ? 'Portrait and current learning focus' : 'Retrato y foco de aprendizaje'}>
           <div class="portrait-stage">
             <figure class="portrait-card">
               <div class="portrait-photo-wrap">
                 <img
                   class="portrait-photo"
-                  src="/images/arnold-avatar.jpg"
+                  src="/images/arnold-portrait.jpg"
                   alt={t.hero.portraitAlt}
                   width="460"
                   height="460"
@@ -107,10 +107,6 @@ const progressLabels = {
                 />
                 <span class="portrait-initials" aria-hidden="true">AC</span>
               </div>
-              <figcaption>
-                <span class="portrait-caption-label">{t.hero.portraitCaption}</span>
-                <span class="portrait-caption-name">ARNOLD CHUCTAYA</span>
-              </figcaption>
             </figure>
             <svg class="signal-drawing" viewBox="0 0 440 190" fill="none" aria-hidden="true">
               <path class="signal-drawing-line" d="M4 100h24l11-30 15 62 18-96 19 111 17-71 17 42h23l18-30h20l18 18h29l18-18h27l15-28 16 42h29l17-17h42" />

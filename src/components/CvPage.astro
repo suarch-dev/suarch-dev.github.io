@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import cv from '../data/cv.json';
+import { portfolio, type Locale } from '../data/portfolio';
+
+interface Props {
+  locale: Locale;
+  canonicalPath: string;
+  alternatePath: string;
+}
+
+const { locale, canonicalPath, alternatePath } = Astro.props;
+const data = cv[locale];
+const home = portfolio[locale];
+const sections = data.sections;
+const pdfHref = locale === 'en' ? '/cv/arnold-chuctaya-en.pdf' : '/cv/arnold-chuctaya-es.pdf';
+---
+
+<BaseLayout
+  title={`${data.name} — ${locale === 'en' ? 'CV' : 'Currículum'}`}
+  description={data.summary}
+  lang={locale}
+  canonicalPath={canonicalPath}
+  alternatePath={alternatePath}
+>
+  <div class="site-shell cv-shell">
+    <header class="case-header cv-header">
+      <a class="brand" href={home.homeHref}>
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M4 17h4l3-8 5 15 4-11 3 4h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg></span>
+        <span class="brand-name">ARNOLD<span class="brand-divider">/</span>CHUCTAYA</span>
+      </a>
+      <div class="case-header-links">
+        <a href={home.homeHref}><span class="case-back-label">{locale === 'en' ? 'Back to portfolio' : 'Volver al portfolio'}</span><span class="case-back-icon" aria-hidden="true">↖</span></a>
+        <a class="language-switch" href={alternatePath} lang={locale === 'en' ? 'es' : 'en'}>{locale === 'en' ? 'ES' : 'EN'}<span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" class="cv-main section-wrap">
+      <div class="cv-actions">
+        <span class="section-index">{locale === 'en' ? 'CAREER PROFILE / 2026' : 'PERFIL PROFESIONAL / 2026'}</span>
+        <div>
+          <a class="button button-primary" href={pdfHref} download>{locale === 'en' ? 'Download PDF' : 'Descargar PDF'}<span aria-hidden="true">↓</span></a>
+          <button class="button button-quiet print-button" type="button" data-print-cv>{locale === 'en' ? 'Print' : 'Imprimir'}<span aria-hidden="true">⎙</span></button>
+        </div>
+      </div>
+
+      <article class="cv-document">
+        <header class="cv-document-header">
+          <div>
+            <p class="micro-label">{locale === 'en' ? 'TECHNICAL SUPPORT · VOIP · NETWORKS' : 'SOPORTE TÉCNICO · VOIP · REDES'}</p>
+            <h1>{data.name}</h1>
+            <p class="cv-headline">{data.headline}</p>
+          </div>
+          <address>
+            <span>{data.location}</span>
+            <a href={`mailto:${data.email}`}>{data.email}</a>
+            <a href={`https://${data.linkedin}`} target="_blank" rel="noreferrer">{data.linkedin}</a>
+            <a href={`https://${data.github}`} target="_blank" rel="noreferrer">{data.github}</a>
+          </address>
+        </header>
+
+        <section class="cv-section cv-summary">
+          <h2>{locale === 'en' ? 'Profile' : 'Perfil'}</h2>
+          <p>{data.summary}</p>
+        </section>
+
+        <section class="cv-section">
+          <h2>{sections.experience}</h2>
+          <div class="cv-experience-list">
+            {data.experience.map((role) => (
+              <article class="cv-entry">
+                <div class="cv-entry-period"><strong>{role.period}</strong><span>{role.duration}</span></div>
+                <div class="cv-entry-body">
+                  <h3>{role.company}</h3>
+                  <p class="cv-entry-role">{role.role}</p>
+                  <ul>{role.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <h2>{sections.skills}</h2>
+          <dl class="cv-skills">
+            {data.skills.map((skill) => <div><dt>{skill.label}</dt><dd>{skill.value}</dd></div>)}
+          </dl>
+        </section>
+
+        <section class="cv-columns">
+          <div class="cv-section">
+            <h2>{sections.education}</h2>
+            {data.education.map((item) => (
+              <article class="cv-compact-entry"><time>{item.period}</time><div><h3>{item.title}</h3><p>{item.place}</p></div></article>
+            ))}
+          </div>
+          <div class="cv-section">
+            <h2>{sections.training}</h2>
+            {data.training.map((item) => (
+              <article class="cv-compact-entry"><time>{item.period}</time><div><h3>{item.title}</h3><p>{item.place}</p></div></article>
+            ))}
+          </div>
+        </section>
+
+        <section class="cv-footer-section">
+          <div><h2>{sections.languages}</h2><p>{data.languages.map((language) => `${language.name}: ${language.level}`).join(' · ')}</p></div>
+          <div><h2>{sections.availability}</h2><p>{data.availability}</p></div>
+        </section>
+      </article>
+      <p class="cv-small-note">{locale === 'en' ? 'This CV is also available in' : 'Este CV también está disponible en'} <a href={alternatePath}>{locale === 'en' ? 'Spanish' : 'inglés'}</a>.</p>
+    </main>
+
+    <footer class="site-footer section-wrap case-footer"><div class="footer-brand"><span class="footer-mark">A.</span><span>{home.footer.signoff}</span></div><p>{home.footer.build}</p><small>© {new Date().getFullYear()} Arnold Chuctaya Sevincha</small></footer>
+  </div>
+</BaseLayout>

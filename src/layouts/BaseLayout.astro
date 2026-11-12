@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'en' | 'es';
+  canonicalPath: string;
+  alternatePath?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  lang,
+  canonicalPath,
+  alternatePath,
+  type = 'website',
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://suarch-dev.github.io');
+const canonical = new URL(canonicalPath, site).toString();
+const alternate = alternatePath ? new URL(alternatePath, site).toString() : undefined;
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Arnold Chuctaya Sevincha',
+  url: site.toString(),
+  email: 'mailto:suarch.dev@gmail.com',
+  jobTitle: 'IT Support and VoIP Technician',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Madrid',
+    addressCountry: 'ES',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/arnoldcs97/',
+    'https://github.com/suarch-dev',
+  ],
+  knowsAbout: [
+    'VoIP',
+    'SIP',
+    'Computer networking',
+    'Technical support',
+    'Python automation',
+    'Docker',
+    'Platform Engineering',
+  ],
+};
+---
+
+<!doctype html>
+<html lang={lang} data-theme="ember">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#15100d" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Arnold Chuctaya Sevincha" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    {alternate && <link rel="alternate" hreflang={lang === 'en' ? 'es' : 'en'} href={alternate} />}
+    {alternate && <link rel="alternate" hreflang="x-default" href={lang === 'en' ? canonical : alternate} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_GB' : 'es_ES'} />
+    <meta property="og:site_name" content="Arnold Chuctaya · Signal to Systems" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/social-card.jpg', site).toString()} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Arnold Chuctaya — from VoIP and support toward Platform Engineering" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/social-card.jpg', site).toString()} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(person)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}</a>
+    <slot />
+    <script>
+      const menuToggle = document.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+      const menu = document.querySelector<HTMLElement>('[data-menu]');
+
+      if (menuToggle && menu) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', String(!isOpen));
+          menu.classList.toggle('is-open', !isOpen);
+        });
+
+        menu.querySelectorAll<HTMLAnchorElement>('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menu.classList.remove('is-open');
+          });
+        });
+      }
+
+      document.querySelectorAll<HTMLButtonElement>('[data-print-cv]').forEach((button) => {
+        button.addEventListener('click', () => window.print());
+      });
+    </script>
+  </body>
+</html>

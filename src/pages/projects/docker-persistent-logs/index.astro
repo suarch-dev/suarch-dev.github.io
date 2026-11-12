@@ -1,0 +1,11 @@
+---
+import CaseStudyPage from '../../../components/CaseStudyPage.astro';
+import { caseStudies } from '../../../data/case-studies';
+---
+
+<CaseStudyPage
+  locale="en"
+  study={caseStudies.docker.en}
+  canonicalPath="/projects/docker-persistent-logs/"
+  alternatePath="/es/proyectos/logs-persistentes-docker/"
+/>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="0" x2="1160" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17100C"/>
+      <stop offset=".6" stop-color="#20150F"/>
+      <stop offset="1" stop-color="#3B2115"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(390 280 -280 390 939 323)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF884D" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#FF884D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <path d="M0 526h1200M0 126h1200M180 0v630M560 0v630M940 0v630" stroke="#FFE1C0" stroke-opacity=".06"/>
+  <rect x="72" y="72" width="56" height="56" rx="14" fill="#FF884D" fill-opacity=".14" stroke="#FF884D" stroke-opacity=".7"/>
+  <path d="M85 101h8l5-12 7 25 8-18 5 8h9" stroke="#FFD16A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="154" y="107" fill="#F6EDDF" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">ARNOLD CHUCTAYA SEVINCHA</text>
+  <text x="72" y="261" fill="#F6EDDF" font-family="Arial, sans-serif" font-size="59" font-weight="700" letter-spacing="-2">I keep systems running.</text>
+  <text x="72" y="337" fill="#FF9B5E" font-family="Arial, sans-serif" font-size="59" font-weight="700" letter-spacing="-2">Learning to build what runs them.</text>
+  <text x="76" y="409" fill="#D9C8B8" font-family="Arial, sans-serif" font-size="24">IT Support · VoIP · Networks → Platform Engineering</text>
+  <path d="M76 493h420l20-36 22 76 23-105 22 83 19-46 20 28h57l22-23 25 46 22-56 23 33h165" stroke="#FFD16A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".92"/>
+  <circle cx="518" cy="457" r="5" fill="#FF684F"/>
+  <circle cx="716" cy="493" r="5" fill="#FF684F"/>
+  <circle cx="927" cy="456" r="5" fill="#FF684F"/>
+  <text x="1020" y="555" fill="#AD9C8D" font-family="monospace" font-size="15" letter-spacing="3">MADRID · SPAIN</text>
+</svg>

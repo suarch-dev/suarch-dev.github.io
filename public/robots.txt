@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suarch-dev.github.io/sitemap.xml

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { portfolio, type Locale } from '../data/portfolio';
+
+interface Study {
+  lang: string;
+  title: string;
+  eyebrow: string;
+  summary: string;
+  repo: string;
+  repoLabel: string;
+  backLabel: string;
+  status: string;
+  problemTitle: string;
+  problem: string;
+  flowTitle: string;
+  flow: readonly { name: string; note: string }[];
+  implementationTitle: string;
+  implementation: readonly string[];
+  honestTitle: string;
+  honest: string;
+  stackTitle: string;
+  stack: readonly string[];
+  reflectionTitle: string;
+  reflection: string;
+}
+
+interface Props {
+  locale: Locale;
+  study: Study;
+  canonicalPath: string;
+  alternatePath: string;
+}
+
+const { locale, study, canonicalPath, alternatePath } = Astro.props;
+const home = portfolio[locale];
+---
+
+<BaseLayout
+  title={`${study.title} — Arnold Chuctaya`}
+  description={study.summary}
+  lang={locale}
+  canonicalPath={canonicalPath}
+  alternatePath={alternatePath}
+  type="article"
+>
+  <div class="site-shell case-shell">
+    <header class="case-header">
+      <a class="brand" href={home.homeHref} aria-label="Arnold Chuctaya — home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none"><path d="M4 17h4l3-8 5 15 4-11 3 4h5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </span>
+        <span class="brand-name">ARNOLD<span class="brand-divider">/</span>CHUCTAYA</span>
+      </a>
+      <div class="case-header-links">
+        <a href={`${home.homeHref}#work`}><span class="case-back-label">{study.backLabel}</span><span class="case-back-icon" aria-hidden="true">↖</span></a>
+        <a class="language-switch" href={alternatePath} lang={locale === 'en' ? 'es' : 'en'}>{locale === 'en' ? 'ES' : 'EN'}<span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="main-content" class="case-main section-wrap">
+      <div class="case-breadcrumb"><a href={`${home.homeHref}#work`}>03 / {locale === 'en' ? 'SELECTED WORK' : 'PROYECTOS'}</a><span>/</span><span>{study.eyebrow}</span></div>
+      <div class="case-hero">
+        <p class="section-index">{study.status}</p>
+        <h1>{study.title}</h1>
+        <p class="case-summary">{study.summary}</p>
+        <a class="button button-primary" href={study.repo} target="_blank" rel="noreferrer">{study.repoLabel}<span aria-hidden="true">↗</span></a>
+      </div>
+
+      <section class="case-section case-problem">
+        <div><p class="micro-label">01 / CONTEXT</p><h2>{study.problemTitle}</h2></div>
+        <p>{study.problem}</p>
+      </section>
+
+      <section class="case-section case-flow-section">
+        <div class="case-section-heading"><p class="micro-label">02 / DATA PATH</p><h2>{study.flowTitle}</h2></div>
+        <ol class="case-flow">
+          {study.flow.map((step, index) => (
+            <li>
+              <span class="case-flow-step">0{index + 1}</span>
+              <strong>{step.name}</strong>
+              <span>{step.note}</span>
+              {index < study.flow.length - 1 && <i class="case-flow-arrow" aria-hidden="true">→</i>}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <div class="case-detail-grid">
+        <section class="case-section case-implementation">
+          <p class="micro-label">03 / BUILD NOTES</p>
+          <h2>{study.implementationTitle}</h2>
+          <ul class="case-bullet-list">
+            {study.implementation.map((item) => <li>{item}</li>)}
+          </ul>
+        </section>
+        <section class="case-section case-scope">
+          <p class="micro-label">04 / HONEST SCOPE</p>
+          <h2>{study.honestTitle}</h2>
+          <p>{study.honest}</p>
+          <h3>{study.stackTitle}</h3>
+          <ul class="tag-list case-tag-list">
+            {study.stack.map((tool) => <li>{tool}</li>)}
+          </ul>
+        </section>
+      </div>
+
+      <section class="case-reflection">
+        <span class="case-reflection-glyph" aria-hidden="true">✳</span>
+        <div><p class="micro-label">05 / REFLECTION</p><h2>{study.reflectionTitle}</h2><p>{study.reflection}</p></div>
+      </section>
+
+      <div class="case-end-link"><a class="button button-quiet" href={`${home.homeHref}#work`}>{study.backLabel}<span aria-hidden="true">↖</span></a><a href={home.contact.emailHref}>{locale === 'en' ? 'Get in touch' : 'Hablemos'}<span aria-hidden="true">↗</span></a></div>
+    </main>
+
+    <footer class="site-footer section-wrap case-footer"><div class="footer-brand"><span class="footer-mark">A.</span><span>{home.footer.signoff}</span></div><p>{home.footer.build}</p><small>© {new Date().getFullYear()} Arnold Chuctaya Sevincha</small></footer>
+  </div>
+</BaseLayout>

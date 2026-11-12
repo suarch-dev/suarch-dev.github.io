@@ -1,0 +1,222 @@
+{
+  "en": {
+    "locale": "en",
+    "name": "Arnold Chuctaya Sevincha",
+    "headline": "IT Support & VoIP | Networking | Building toward Platform Engineering",
+    "location": "Madrid, Spain",
+    "email": "suarch.dev@gmail.com",
+    "linkedin": "linkedin.com/in/arnoldcs97",
+    "github": "github.com/suarch-dev",
+    "summary": "IT support professional with 5.8 years of cumulative experience in VoIP, data networks and incident resolution. Experienced with PBX systems, SIP support and customer-facing troubleshooting. Building practical skills in Python, Docker, Linux and cloud fundamentals, with a long-term goal of moving into Platform Engineering. Currently seeking IT support, VoIP, networking, NOC or junior systems opportunities.",
+    "sections": {
+      "experience": "Professional experience",
+      "skills": "Technical skills",
+      "education": "Education",
+      "training": "Additional training",
+      "languages": "Languages",
+      "availability": "Availability"
+    },
+    "skills": [
+      {
+        "label": "VoIP & telephony",
+        "value": "Panasonic NS500, Yeastar, IPBrick, 3CX, gloCOM, SIP"
+      },
+      {
+        "label": "Networking",
+        "value": "TCP/IP, VLANs, inter-VLAN routing, DHCP, DNS, NAT, VPN, routers, switches, ONTs"
+      },
+      {
+        "label": "Systems & tools",
+        "value": "Windows 10/11 (intermediate), Microsoft 365 (user), Zoho Desk, Linux CLI (basic, VM)"
+      },
+      {
+        "label": "Automation & containers",
+        "value": "Python fundamentals, Git/GitHub, Docker, Docker Compose"
+      },
+      {
+        "label": "Cloud foundations",
+        "value": "Introductory guided AWS masterclass: AWS CLI, EC2 basics, S3 static website hosting, Lambda and introductory RDS, DocumentDB, DynamoDB and MemoryDB concepts; not commercial cloud experience"
+      }
+    ],
+    "experience": [
+      {
+        "period": "Jan 2018 — Oct 2024",
+        "duration": "5.8 years cumulative",
+        "company": "Grupo Amazing",
+        "role": "VoIP & Data Technical Support",
+        "bullets": [
+          "Handled customer calls, managed technical incidents and followed issues through resolution.",
+          "Configured and maintained VoIP telephony and PBX platforms, including Panasonic NS500, Yeastar, IPBrick, 3CX and gloCOM.",
+          "Supported SIP services and network equipment across VLANs, routers, switches and ONTs.",
+          "Identified an alternative to rented PBXWare/gloCOM services that moved the solution toward greater in-house control and helped reduce costs.",
+          "Supported the onboarding and training of a new team member."
+        ]
+      },
+      {
+        "period": "Apr 2018 — Jul 2018",
+        "duration": "3 months",
+        "company": "Telmar",
+        "role": "Voice & Data Technical Support Intern",
+        "bullets": [
+          "Vocational training placement in telecommunications installations.",
+          "Installed and checked analogue PBX systems and supported Windows computer maintenance."
+        ]
+      },
+      {
+        "period": "Jun 2025 — Jun 2026",
+        "duration": "1 year",
+        "company": "Balanz Records",
+        "role": "Owner / Studio Operations",
+        "bullets": [
+          "Managed studio operations, client communication, quotes, budgets, costs and promotion.",
+          "Maintained audio equipment and audiovisual production software."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "period": "2018 — 2020",
+        "title": "Higher Vocational Diploma in Sound for Audiovisual Media and Live Events",
+        "place": "IES Puerta Bonita, Madrid"
+      },
+      {
+        "period": "2016 — 2018",
+        "title": "Intermediate Vocational Diploma in Telecommunications Installations",
+        "place": "IES Juan de la Cierva, Madrid"
+      }
+    ],
+    "training": [
+      {
+        "period": "Oct 2026 — present",
+        "title": "Self-directed learning: Python, Docker, Linux CLI, Git/GitHub, networking and introductory AWS",
+        "place": "Current focus: Linux administration, networking and the next CI/CD milestone"
+      },
+      {
+        "period": "2023",
+        "title": "Digitalisation Applied to the Professional Environment · 60 hours",
+        "place": "Femxa"
+      },
+      {
+        "period": "2016",
+        "title": "Achievement Orientation · 15 hours",
+        "place": "Cruz Roja"
+      }
+    ],
+    "languages": [
+      { "name": "Spanish", "level": "Native" },
+      { "name": "English", "level": "B1 · actively improving speaking confidence" },
+      { "name": "French", "level": "A2" }
+    ],
+    "availability": "Available immediately · Day shift · On-site or hybrid · Driving licence B"
+  },
+  "es": {
+    "locale": "es",
+    "name": "Arnold Chuctaya Sevincha",
+    "headline": "Soporte TI y VoIP | Redes | En camino a Platform Engineering",
+    "location": "Madrid, España",
+    "email": "suarch.dev@gmail.com",
+    "linkedin": "linkedin.com/in/arnoldcs97",
+    "github": "github.com/suarch-dev",
+    "summary": "Profesional de soporte TI con 5,8 años de experiencia acumulada en VoIP, redes de datos y resolución de incidencias. Experiencia con centralitas, soporte SIP y diagnóstico técnico de cara al cliente. Desarrollando competencias prácticas en Python, Docker, Linux y fundamentos cloud, con el objetivo a largo plazo de avanzar hacia Platform Engineering. En búsqueda de puestos de soporte TI, VoIP, redes, NOC o sistemas junior.",
+    "sections": {
+      "experience": "Experiencia profesional",
+      "skills": "Competencias técnicas",
+      "education": "Formación académica",
+      "training": "Formación complementaria",
+      "languages": "Idiomas",
+      "availability": "Disponibilidad"
+    },
+    "skills": [
+      {
+        "label": "VoIP y telefonía",
+        "value": "Panasonic NS500, Yeastar, IPBrick, 3CX, gloCOM, SIP"
+      },
+      {
+        "label": "Redes",
+        "value": "TCP/IP, VLAN, routing entre VLAN, DHCP, DNS, NAT, VPN, routers, switches, ONT"
+      },
+      {
+        "label": "Sistemas y herramientas",
+        "value": "Windows 10/11 (intermedio), Microsoft 365 (usuario), Zoho Desk, CLI de Linux (básico, VM)"
+      },
+      {
+        "label": "Automatización y contenedores",
+        "value": "Fundamentos de Python, Git/GitHub, Docker, Docker Compose"
+      },
+      {
+        "label": "Fundamentos cloud",
+        "value": "Introducción guiada a AWS: AWS CLI, fundamentos de EC2, hosting estático en S3, Lambda y conceptos iniciales de RDS, DocumentDB, DynamoDB y MemoryDB; sin experiencia cloud comercial"
+      }
+    ],
+    "experience": [
+      {
+        "period": "01/2018 — 10/2024",
+        "duration": "5,8 años acumulados",
+        "company": "Grupo Amazing",
+        "role": "Servicio técnico de VoIP y datos",
+        "bullets": [
+          "Atención telefónica, gestión de incidencias técnicas y seguimiento hasta su resolución.",
+          "Configuración y mantenimiento de telefonía VoIP y centralitas Panasonic NS500, Yeastar, IPBrick, 3CX y gloCOM.",
+          "Soporte de servicios SIP y equipos de red: VLAN, routers, switches y ONT.",
+          "Identifiqué una alternativa a los servicios alquilados de PBXWare/gloCOM para avanzar hacia una solución propia y contribuir a reducir costes.",
+          "Apoyé la incorporación y formación de un nuevo compañero."
+        ]
+      },
+      {
+        "period": "04/2018 — 07/2018",
+        "duration": "3 meses",
+        "company": "Telmar",
+        "role": "Prácticas de servicio técnico de voz y datos",
+        "bullets": [
+          "Prácticas de formación profesional en instalaciones de telecomunicaciones.",
+          "Instalación y revisión de centralitas analógicas y mantenimiento informático de sistemas Windows."
+        ]
+      },
+      {
+        "period": "06/2025 — 06/2026",
+        "duration": "1 año",
+        "company": "Balanz Records",
+        "role": "Negocio propio · Operaciones de estudio",
+        "bullets": [
+          "Gestión integral del estudio, clientes, presupuestos, costes y promoción.",
+          "Mantenimiento técnico de equipos y software de producción audiovisual."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "period": "2018 — 2020",
+        "title": "CFGS Sonido para Audiovisuales y Espectáculos",
+        "place": "IES Puerta Bonita, Madrid"
+      },
+      {
+        "period": "2016 — 2018",
+        "title": "CFGM Instalaciones de Telecomunicaciones",
+        "place": "IES Juan de la Cierva, Madrid"
+      }
+    ],
+    "training": [
+      {
+        "period": "10/2026 — actualidad",
+        "title": "Formación autodidacta: Python, Docker, CLI de Linux, Git/GitHub, redes e introducción a AWS",
+        "place": "Foco actual: administración Linux, redes y próximo hito de CI/CD"
+      },
+      {
+        "period": "2023",
+        "title": "Digitalización Aplicada al Entorno Profesional · 60 horas",
+        "place": "Femxa"
+      },
+      {
+        "period": "2016",
+        "title": "Orientación al Logro · 15 horas",
+        "place": "Cruz Roja"
+      }
+    ],
+    "languages": [
+      { "name": "Español", "level": "Nativo" },
+      { "name": "Inglés", "level": "B1 · mejorando activamente la expresión oral" },
+      { "name": "Francés", "level": "A2" }
+    ],
+    "availability": "Incorporación inmediata · Turno diurno · Presencial o híbrido · Carnet B"
+  }
+}

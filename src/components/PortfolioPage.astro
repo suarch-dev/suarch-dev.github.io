@@ -9,6 +9,8 @@ interface Props {
 const { locale } = Astro.props;
 const t = portfolio[locale];
 const alternate = portfolio[locale === 'en' ? 'es' : 'en'];
+// Repeating one full set eight times keeps the marquee filled on wide desktop screens.
+const tickerItems = Array.from({ length: 8 }, () => t.ticker).flat();
 
 const progressLabels = {
   complete: t.route.completedLabel,
@@ -92,27 +94,17 @@ const progressLabels = {
         </div>
 
         <div class="hero-visual" aria-label={t.hero.portraitCaption}>
-          <div class="hero-visual-topline">
-            <span>40°25′N&nbsp; 3°42′W</span>
-            <span>{locale === 'en' ? 'FIELD NOTE / 01' : 'NOTA DE CAMPO / 01'}</span>
-          </div>
           <div class="portrait-stage">
-            <div class="portrait-orbit portrait-orbit-one" aria-hidden="true"></div>
-            <div class="portrait-orbit portrait-orbit-two" aria-hidden="true"></div>
-            <div class="portrait-stamp" aria-hidden="true">
-              {locale === 'en' ? <>SIGNAL<br />TO<br />SYSTEM</> : <>SEÑAL<br />A<br />SISTEMA</>}
-            </div>
             <figure class="portrait-card">
               <div class="portrait-photo-wrap">
                 <img
                   class="portrait-photo"
                   src="/images/arnold-avatar.jpg"
                   alt={t.hero.portraitAlt}
-                  width="512"
-                  height="512"
+                  width="460"
+                  height="460"
                   fetchpriority="high"
                 />
-                <span class="portrait-photo-shade" aria-hidden="true"></span>
                 <span class="portrait-initials" aria-hidden="true">AC</span>
               </div>
               <figcaption>
@@ -127,22 +119,17 @@ const progressLabels = {
               <circle class="signal-node" cx="365" cy="129" r="4" />
               <path class="signal-drawing-grid" d="M0 155h440M0 35h440M80 0v190M220 0v190M360 0v190" />
             </svg>
-            <div class="focus-chip">
-              <span class="focus-chip-label">{t.hero.focusLabel}</span>
-              <strong>{t.hero.focusValue}</strong>
-              <span class="focus-chip-arrow" aria-hidden="true">↗</span>
-            </div>
           </div>
-          <div class="hero-visual-footer">
-            <span>{locale === 'en' ? 'VOIP / NETWORKS / AUTOMATION' : 'VOIP / REDES / AUTOMATIZACIÓN'}</span>
-            <span>{locale === 'en' ? 'ROUTE' : 'RUTA'} / 01<span class="footer-spark" aria-hidden="true">✳</span></span>
+          <div class="focus-note">
+            <span>{t.hero.focusLabel}</span>
+            <strong>{t.hero.focusValue}</strong>
           </div>
         </div>
       </section>
 
       <div class="ticker" role="img" aria-label={locale === 'en' ? 'VoIP, networks, support, Linux and Platform Engineering' : 'VoIP, redes, soporte, Linux e ingeniería de plataformas'}>
         <div class="ticker-track" aria-hidden="true">
-          {[...t.ticker, ...t.ticker].map((item) => <span class="ticker-entry"><span>{item}</span><b>✳</b></span>)}
+          {tickerItems.map((item) => <span class="ticker-entry"><span>{item}</span><b>✳</b></span>)}
         </div>
       </div>
 
@@ -358,7 +345,6 @@ const progressLabels = {
       </section>
 
       <section id="contact" class="contact-section section-wrap" aria-labelledby="contact-heading">
-        <div class="contact-stamp" aria-hidden="true">LET’S<br />CONNECT<br /><span>✳</span></div>
         <div class="contact-content">
           <p class="section-index">{t.contact.eyebrow}</p>
           <h2 id="contact-heading">{t.contact.heading}</h2>

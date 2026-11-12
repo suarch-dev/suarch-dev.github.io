@@ -11,7 +11,9 @@ The site is configured as a GitHub Pages **user site** at `https://suarch-dev.gi
 
 ## Request the free subdomain
 
-Follow the current [is-a.dev GitHub Pages guide](https://docs.is-a.dev/guides/github-pages/). A domain registration file for `suarch.is-a.dev` should identify the owner and point the CNAME record to the account's Pages hostname:
+First read the current [is-a.dev GitHub Pages guide](https://docs.is-a.dev/guides/github-pages/) and the registration repository's instructions. Its README explicitly asks applicants **not** to use AI to generate their registration request, so this project does not create or submit that request. The owner must check availability and author the request themselves.
+
+For reference only, the domain-record format for a GitHub Pages subdomain identifies the owner and points the CNAME record to the account's Pages hostname:
 
 ```json
 {
